@@ -56,8 +56,8 @@ class Writer(firstName: String, surname: String, val year: Int) {
 }
 
 class Novel(name: String, year: Int, author: Writer) {
-  def authorAge = year - author.year
-  def isWrittenBy(author: Writer) = author == this.author
+  def authorAge: Int = year - author.year
+  def isWrittenBy(author: Writer): Boolean = author == this.author
   def copy(newYear: Int): Novel = new Novel(name, newYear, author)
 }
 
@@ -69,7 +69,7 @@ class Novel(name: String, year: Int, author: Writer) {
     - overload inc/dec to receive an amount
  */
 class Counter(val count: Int = 0) {
-  def inc = {
+  def inc: Counter = {
     println("incrementing")
     new Counter(count + 1)  // immutability
   }
